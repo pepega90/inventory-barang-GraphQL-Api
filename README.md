@@ -18,14 +18,14 @@ Project is created with:
 |updated_at| time|
 
 - Barang Keluar
-| column | type | relasi|
+| column | type | relasi | 
 | --- | --- | --- |
 | id | string uuid | |
 | jumlah | int | |
 | jumlah |int | |
-|barang_masuk_id| string uuid| one-to-one|
-|created_at| time| |
-|updated_at| time| |
+| barang_masuk_id| string uuid |one-to-one|
+| created_at | time | |
+| updated_at | time | |
 
 
 ## Query
