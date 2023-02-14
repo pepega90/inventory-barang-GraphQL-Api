@@ -1,0 +1,7 @@
+skip_validation: true
+
+models: 
+  BarangKeluar:
+    fields:
+      barangMasuk:
+        resolver: true

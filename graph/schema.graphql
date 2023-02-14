@@ -1,0 +1,65 @@
+scalar Time
+
+
+type BarangMasuk {
+    id: ID!
+    namaBarang: String!
+    jumlahBarang: Int!
+    createdAt: Time!
+    updatedAt: Time!
+}
+
+type BarangKeluar {
+    id: ID!
+    jumlahKeluar: Int!
+    barangMasukId: ID!
+    barangMasuk: BarangMasuk!
+    createdAt: Time!
+    updatedAt: Time!
+}
+
+type BarangMasukResponse {
+    barang: BarangMasuk!
+}
+
+type BarangKeluarResponse {
+    barangKeluar: BarangKeluar!
+}
+
+type ResBody {
+    message: String!
+    status_code: String!
+}
+
+input CreateBarangmasukInput {
+    namaBarang: String!
+    jumlahBarang: Int!
+}
+
+input CreateBarangKeluarInput {
+    barangMasukId: ID!
+    jumlahKeluar: Int!
+}
+
+input UpdateBarangKeluarInput {
+    jumlahKeluar: Int!
+    barangMasukId: ID!
+}
+
+# Query, itu tempat dimana client mengirim request dan menerima response. misal GET request lalu kita mengembalikan
+# seluruh barang masuk
+type Query {
+    masuks: [BarangMasuk!]
+    keluars: [BarangKeluar!]
+}
+
+# Mutation, tempat dimana kita melakuka modifikasi, seperti membuat barang masuk (POST)  mengupdate (PUT) dan menghapus (DELETE)
+type Mutation {
+    createBarangMasuk(input: CreateBarangmasukInput!): BarangMasukResponse!
+    createBarangKeluar(input: CreateBarangKeluarInput!): BarangKeluarResponse!
+    updateBarangMasuk(id: ID!, input: CreateBarangmasukInput!): BarangMasukResponse!
+    updateBarangKeluar(id: ID!, input: UpdateBarangKeluarInput!): BarangKeluarResponse!
+    hapusBarangMasuk(id: ID!): ResBody!
+    hapusBarangKeluar(id: ID!): ResBody!
+    getBarangMasukByID(id: ID!): BarangMasukResponse!
+}
