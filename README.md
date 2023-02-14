@@ -8,7 +8,7 @@ Project is created with:
 
 ## Table
 
-- Barang Masuk
+### Barang Masuk
 | column | type |
 | --- | --- |
 | id | string uuid |
@@ -17,7 +17,7 @@ Project is created with:
 |created_at| time|
 |updated_at| time|
 
-- Barang Keluar
+### Barang Keluar
 | column | type | relasi | 
 | --- | --- | --- |
 | id | string uuid | |
