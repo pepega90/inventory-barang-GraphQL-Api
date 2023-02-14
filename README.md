@@ -1,2 +1,7 @@
 # inventory-barang-GraphQL-Api
-made with Go &amp; GraphQL
+
+## Technologies
+Project is created with:
+* Go
+* PostgreSQL
+* [gqlgen](https://gqlgen.com/)
